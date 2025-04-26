@@ -25,27 +25,6 @@ function updateDisplay() {
     timerDisplay.textContent = formatTime(totalSeconds);
 }
 
-// Populate minutes and seconds dropdowns
-function populateDropdowns() {
-    for (let i = 0; i <= 59; i++) {
-        const minOption = document.createElement('option');
-        minOption.value = i;
-        minOption.textContent = i.toString().padStart(2, '0');
-        minutesInput.appendChild(minOption);
-
-        const secOption = document.createElement('option');
-        secOption.value = i;
-        secOption.textContent = i.toString().padStart(2, '0');
-        secondsInput.appendChild(secOption);
-    }
-
-    // Set default values
-    minutesInput.value = 10;
-    secondsInput.value = 0;
-}
-
-populateDropdowns();
-
 // Preload both sounds properly on first interaction
 function preloadSounds() {
     // Try to play and immediately pause to unlock both
@@ -79,6 +58,7 @@ function startTimer() {
     // If the timer is already running, do nothing
     if (timerInterval) return;
 
+    // Get the selected minutes and seconds from the dropdown
     let minutes = parseInt(minutesInput.value) || 0;
     let seconds = parseInt(secondsInput.value) || 0;
     totalSeconds = (minutes * 60) + seconds;
