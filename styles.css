@@ -1,10 +1,14 @@
+html, body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
 @font-face {
     font-family: 'Technology';
     src: url('Technology-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
-
 body {
     background-color: #000;
     color: rgb(255, 255, 255);
