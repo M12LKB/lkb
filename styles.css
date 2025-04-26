@@ -144,7 +144,7 @@ button {
 @media (max-width: 600px) {
     /* Further adjustment for very small screens */
     #timerDisplay {
-        font-size: 10em; /* Further reduce font size for tiny screens */
+        font-size: 12em; /* Further reduce font size for tiny screens */
     }
 
     .colon {
