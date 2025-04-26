@@ -1,14 +1,10 @@
-html, body {
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-}
-
 @font-face {
     font-family: 'Technology';
     src: url('Technology-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
 body {
     background-color: #000;
     color: rgb(255, 255, 255);
@@ -38,14 +34,29 @@ h1 {
     text-align: center;
 }
 
+.time-settings select {
+    width: 80px;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #555;
+    background-color: #222;
+    color: white;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
 #timerDisplay {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12em;
+    font-size: 14em;
     letter-spacing: 10px;
     margin: 20px 0;
-    font-family: 'Technology', monospace; /* Use Technology font */
+    font-family: 'Technology', monospace;
+    flex-wrap: wrap; /* 👈 Added for mobile wrapping */
 }
 
 .digit span {
@@ -53,12 +64,6 @@ h1 {
     font-size: 5em;
     color: black;
     font-weight: normal;
-}
-
-.digit span {
-    font-size: 3em;
-    color: black;
-    font-weight: bold;
 }
 
 /* Colon style */
@@ -75,6 +80,7 @@ h1 {
     justify-content: center;
     gap: 15px;
     margin-top: 20px;
+    flex-wrap: wrap; /* 👈 Added for mobile wrapping */
 }
 
 button {
@@ -100,4 +106,47 @@ button {
 
 .red {
     background-color: #dc3545;
+}
+
+/* 👇 ADD THIS FOR MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .time-settings input {
+        width: 50px;
+        font-size: 1em;
+    }
+
+    #timerDisplay {
+        font-size: 6em;
+        letter-spacing: 5px;
+        flex-wrap: wrap;
+    }
+
+    .colon {
+        font-size: 4em;
+        margin: 0 10px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+        height: 60px;
+        font-size: 1.2em;
+    }
 }
